@@ -1,6 +1,6 @@
-import React, { createContext, useState, useEffect } from "react";
-
-export const AppContext = createContext();
+import React, { useState, useEffect } from "react";
+import { AppContext } from "./context";
+export { AppContext };
 
 export const AppProvider = ({ children }) => {
   const [user, setUser] = useState(null);
