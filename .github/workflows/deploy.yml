@@ -20,6 +20,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Debug info
+        run: |
+          echo "== pwd =="; pwd
+          echo "== ls repo root =="; ls -la
+          echo "== ls frontend =="; ls -la frontend || true
+          echo "== node/npm versions =="; node -v || true; npm -v || true
+          echo "== print package.json path =="; if [ -f frontend/package.json ]; then echo 'frontend package.json exists'; else echo 'frontend package.json MISSING'; fi
+          echo "== whoami =="; whoami || true
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
